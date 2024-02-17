@@ -1,5 +1,11 @@
 import Login from "@/components/Login";
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Quiz App | Sign In",
+  description: "Sign In to start playing",
+};
 
 const Account = () => {
   return (

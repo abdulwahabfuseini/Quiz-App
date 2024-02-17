@@ -8,7 +8,7 @@ const CategoryCard = ({ title, image, path, bg }: CategoryProps) => {
     <div>
       <Link href={path}>
         <div
-          className={`${bg} flex justify-between sm:gap-x-6 gap-y-4 w-full relative rounded-xl`}
+          className={`${bg} flex justify-between sm:gap-x-6 gap-y-4 w-full relative shadow-lg rounded-xl`}
         >
           <div className="text-white font-bold text-xl px-4 py-6 grid gap-y-2 leading-10">
             <FaPlay  />

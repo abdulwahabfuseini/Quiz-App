@@ -10,7 +10,7 @@ import { useContext } from "react";
 const Results = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   // const { data: session } = useSession();
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="grid place-content-center py-6 place-items-center text-center gap-4 bg-white">
@@ -26,17 +26,18 @@ const Results = () => {
         className="object-contain"
       />
       <div>
-        <h3 className="text-lg font-bold text-green-600 capitalize">You have completed the quiz</h3>
+        <h3 className="text-lg font-bold text-green-600 capitalize">
+          You have completed the quiz
+        </h3>
         <p className=" capitalize">
           You have got{" "}
           <span className="text-lg font-semibold">
-            {quizState.correctAnswerCount}
+          {quizState.correctAnswersCount}
           </span>{" "}
           out of{" "}
           <span className="text-lg font-semibold">
-            {" "}
             {quizState.QuizData[0].questions.length}
-          </span>{" "}
+          </span> {" "}
           questions right
         </p>
       </div>

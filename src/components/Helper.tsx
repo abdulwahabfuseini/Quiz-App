@@ -1,13 +1,13 @@
 import { QuizCategory } from "@/contexts/Types";
 
 export const shuffleAnswers = (questions: QuizCategory) => {
-  if (!questions || !questions.answers) {
+  if (!questions || !questions.incorrectAnswers) {
     return [];
   }
 
   const unshuffledAnswers = [
     questions.correctAnswer,
-    ...questions.answers,
+    ...questions.incorrectAnswers,
   ];
 
   return unshuffledAnswers

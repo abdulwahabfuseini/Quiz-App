@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "antd";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +10,7 @@ const StartPage = () => {
     <div className="">
       <div className="w-full max-w-2xl mx-auto py-10 h-screen sm:h-full md:h-screen grid place-content-center place-items-center">
         <Image
-          src="/SVG/coding.png"
+          src="/SVG/brain.gif"
           width={250}
           height={200}
           alt="quiz"

@@ -41,6 +41,31 @@
   }
 }
 
+.red-background {
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  
+}
+
+.black-background {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+}
+
+.yellow-background {
+  background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+}
+
+.green-background {
+  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+}
+
+.light-background {
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+
+.aqua-background {
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+}
+
 @keyframes shake {
     0%, 100% {
       transform: translateX(0);

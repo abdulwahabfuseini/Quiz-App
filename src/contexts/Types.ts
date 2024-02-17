@@ -25,8 +25,8 @@ export interface QuizCategory {
   questions: {
     [x: string]: any;
     question: string;
+    incorrectAnswers: string[];
     correctAnswer: string;
-    answers: string[];
   }[];
 }
 

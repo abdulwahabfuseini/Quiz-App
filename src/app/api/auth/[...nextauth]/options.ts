@@ -7,20 +7,16 @@ export const authOptions: AuthOptions = {
     providers: [
       GithubProvider({
         clientId: process.env.GITHUB_ID!,
-        clientSecret: process.env.GITHUB_SCERET!
+        clientSecret: process.env.GITHUB_SECRET!
       }),
       GoogleProvider({
         clientId: process.env.GOOGLE_ID!,
-        clientSecret: process.env.GOOGLE_SCERET!
+        clientSecret: process.env.GOOGLE_SECRET!
       }),
     ], 
     secret: process.env.NEXTAUTH_SECRET,
     session: {
         strategy: "jwt"
     },
-    debug: process.env.NODE_ENV === "development",
-    pages: {
-        // signIn: "/categories",
-        signOut: "/",
-    },   
+    debug: process.env.NODE_ENV === "development",  
 }

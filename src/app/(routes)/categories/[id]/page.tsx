@@ -55,13 +55,13 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
       <div className=" ">
         <div className="flex items-center gap-3 px-3 sm:px-6 max-w-6xl mx-auto py-5">
           <Image
-            // src={session?.user?.image}
-            src=""
-            width={25}
-            height={25}
+            src={session?.user?.image || ""}
+            width={40}
+            height={40}
             alt="profile"
+            className="rounded-full object-contain"
           />
-          <h1 className="text-lg">{session?.user?.name}</h1>
+          <h1 className=" font-semibold">{session?.user?.name}</h1>
         </div>
       </div>
       <div className="py-14 max-w-5xl mx-auto px-3">
@@ -89,6 +89,7 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
                   htmlType="button"
                   className="bg-green-600 text-lg h-11 font-semibold"
                   onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+                  disabled={!quizState.isAnswerSelected}
                 >
                   Next Question
                 </Button>

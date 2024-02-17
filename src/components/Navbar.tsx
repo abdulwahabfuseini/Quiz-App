@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Logout from "./Logout";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -11,13 +12,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-5 flex items-center justify-between py-3">
         <div className="flex items-center gap-2">
           <Image
-            src={session?.user?.image}
-            width={25}
-            height={25}
+            src={session?.user?.image || ""}
+            width={40}
+            height={40}
             alt="profile"
+            className="rounded-full object-contain"
           />
-          <h1>{session?.user?.name}</h1>
+          <h1 className=" font-semibold">{session?.user?.name}</h1>
         </div>
+        <Logout />
       </div>
     </div>
   );

@@ -9,9 +9,10 @@ interface QuizState {
   QuizData: QuizCategory[];
   currentQuestionIndex: number;
   showResults: boolean;
-  correctAnswerCount: number;
+  correctAnswersCount: number;
   answers: string[];
   currentAnswer: string;
+  isAnswerSelected: boolean;
 }
 
 type QuizAction =
@@ -23,9 +24,11 @@ const initialState: QuizState = {
   QuizData: QuizData as QuizCategory[],
   currentQuestionIndex: 0,
   showResults: false,
-  correctAnswerCount: 0,
+  correctAnswersCount: 0,
   answers: shuffleAnswers(QuizData[0]),
   currentAnswer: "",
+  isAnswerSelected: false,
+  
 };
 
 const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
@@ -48,19 +51,23 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
         showResults,
         answers,
         currentAnswer: "",
+        isAnswerSelected: false,
       };
     }
     case "SELECT_ANSWER": {
-      const correctAnswerCount =
+      const correctAnswersCount =
         action.payload ===
         state.QuizData[0].questions[state.currentQuestionIndex].correctAnswer
-          ? state.correctAnswerCount + 1
-          : state.correctAnswerCount;
+        ? state.correctAnswersCount + 1
+        : state.correctAnswersCount;
+
+        console.log("Correct Answers Count:", correctAnswersCount);
 
       return {
         ...state,
         currentAnswer: action.payload,
-        correctAnswerCount,
+        correctAnswersCount,
+        isAnswerSelected: true,
       };
     }
     case "RESTART": {
@@ -81,6 +88,7 @@ interface QuizProviderProps {
 
 const QuizProvider: React.FC<QuizProviderProps> = ({ children }) => {
   const value = useReducer(reducer, initialState);
+  
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>;
 };
 
