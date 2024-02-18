@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="max-w-7xl mx-auto px-3 sm:px-5 flex items-center justify-between py-3">
+      <div className="max-w-7xl mx-auto px-3 sm:px-5 flex items-center justify-between py-4">
         <div className="flex items-center gap-2">
           <Image
             src={session?.user?.image || ""}
@@ -18,7 +18,7 @@ const Navbar = () => {
             alt="profile"
             className="rounded-full object-contain"
           />
-          <h1 className=" font-semibold">{session?.user?.name}</h1>
+          <h1 className=" font-bold text-lg sm:text-xl Text truncate">{session?.user?.name}</h1>
         </div>
         <Logout />
       </div>

@@ -20,16 +20,16 @@ type QuizAction =
   | { type: "SELECT_ANSWER"; payload: string }
   | { type: "RESTART" };
 
-const initialState: QuizState = {
-  QuizData: QuizData as QuizCategory[],
-  currentQuestionIndex: 0,
-  showResults: false,
-  correctAnswersCount: 0,
-  answers: shuffleAnswers(QuizData[0]),
-  currentAnswer: "",
-  isAnswerSelected: false,
+  const initialState: QuizState = {
+    QuizData: QuizData as QuizCategory[],
+    currentQuestionIndex: 0,
+    showResults: false,
+    correctAnswersCount: 0,
+    answers: shuffleAnswers(QuizData[0].questions[0]),
+    currentAnswer: "",
+    isAnswerSelected: false,
+  };
   
-};
 
 const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
   switch (action.type) {
@@ -43,7 +43,7 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
 
       const answers = showResults
         ? []
-        : shuffleAnswers(state.QuizData[0][currentQuestionIndex]);
+        : shuffleAnswers(state.QuizData[0].questions[currentQuestionIndex]);
 
       return {
         ...state,

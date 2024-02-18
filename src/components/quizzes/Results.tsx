@@ -2,24 +2,24 @@
 
 import { QuizContext } from "@/contexts/QuizProvider";
 import { Button } from "antd";
-// import { useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 const Results = () => {
   const [quizState, dispatch] = useContext(QuizContext);
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
 
   return (
-    <div className="grid place-content-center py-6 place-items-center text-center gap-4 bg-white">
+    <div className="grid place-content-center py-6 place-items-center text-center gap-4">
       <h1 className="text-2xl font-semibold">
-        Congratutions
-        {/* <span className="text-lg font-semibold">{session?.user?.name}</span> */}
+        Congratutions, {" "}
+        <span className="text-lg font-semibold">{session?.user?.name}</span>
       </h1>
       <Image
-        src="/SVG/trophy.gif"
+        src="/SVG/cup.gif"
         alt="award"
         width={200}
         height={200}
@@ -29,13 +29,13 @@ const Results = () => {
         <h3 className="text-lg font-bold text-green-600 capitalize">
           You have completed the quiz
         </h3>
-        <p className=" capitalize">
+        <p className=" capitalize text-lg">
           You have got{" "}
-          <span className="text-lg font-semibold">
+          <span className="text-2xl font-semibold">
           {quizState.correctAnswersCount}
           </span>{" "}
           out of{" "}
-          <span className="text-lg font-semibold">
+          <span className="text-2xl font-semibold">
             {quizState.QuizData[0].questions.length}
           </span> {" "}
           questions right

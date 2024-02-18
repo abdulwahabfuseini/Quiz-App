@@ -19,12 +19,8 @@ const QuizAnswers: React.FC<ProAnswersProps> = ({
   const isCorrectAnswer = currentAnswer && answerText === correctAnswer;
   const isWrongAnswer =
     currentAnswer === answerText && currentAnswer !== correctAnswer;
-  const correctAnswerSelected = isCorrectAnswer
-    ? "correct-answer"
-    : "";
-  const wrongAnswerSelected = isWrongAnswer
-    ? "wrong-answer"
-    : "";
+  const correctAnswerSelected = isCorrectAnswer ? "correct-answer" : "";
+  const wrongAnswerSelected = isWrongAnswer ? "wrong-answer" : "";
   const disabled = currentAnswer ? "disable" : "";
 
   return (
@@ -34,10 +30,8 @@ const QuizAnswers: React.FC<ProAnswersProps> = ({
     >
       <span>{letterMapping[index]}</span>
       <p className="flex-1 truncate w-full">{answerText}</p>
-      <span>{isCorrectAnswer && <FaCheck className="text-green-700" /> }</span>
-      <span>{isWrongAnswer && <FaTimes className="text-red-700"  /> }</span>
-      
-     
+      <span>{isCorrectAnswer && <FaCheck className="text-green-700" />}</span>
+      <span>{isWrongAnswer && <FaTimes className="text-red-700" />}</span>
     </div>
   );
 };

@@ -12,7 +12,14 @@ const Logout = () => {
     }
   });
 
-  return <button onClick={() => signOut()}>Logout</button>;
+  return (
+    <button
+      onClick={() => signOut()}
+      className="text-lg aqua-background text-white font-bold py-2 px-2 sm:px-3 rounded-lg"
+    >
+      SignOut
+    </button>
+  );
 };
 
 export default Logout;

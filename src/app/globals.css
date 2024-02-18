@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
   h2,
   h4,
   h5,
@@ -24,84 +24,115 @@
   h3 {
     font-family: "Playfair Display", serif;
   }
-} */
+}
 
 @layer utilities {
   .clip {
     @apply clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw));
   }
   .correct-answer {
-    @apply bounded-shake bg-green-200 shadow-inner text-green-700 font-semibold
+    @apply bounded-shake bg-green-200 shadow-inner text-green-700 font-semibold;
   }
   .wrong-answer {
-    @apply shake-button bg-red-200 shadow-inner text-red-700
+    @apply shake-button bg-red-200 shadow-inner text-red-700;
   }
   .disable {
-    @apply pointer-events-none 
+    @apply pointer-events-none;
   }
 }
 
 .red-background {
   background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-  
 }
 
 .black-background {
-  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
 }
 
 .yellow-background {
-  background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+  background: linear-gradient(90deg, #c67700 0%, #fcff9e 100%);
 }
 
 .green-background {
-  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+  background: linear-gradient(90deg, #3ad59f 0%, #f8ff00 100%);
 }
 
 .light-background {
-  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
 }
 
 .aqua-background {
-  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  background: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+}
+
+.Text {
+  color: blue;
+  background-image: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 @keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-3px);
-    }
-    50% {
-      transform: translateX(3px);
-    }
-    75% {
-      transform: translateX(-3px);
-    }
+  0%,
+  100% {
+    transform: translateX(0);
   }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+}
 
-  
-  .shake-button {
-    animation: shake 0.5s ease-in-out infinite;
-  }
+.shake-button {
+  animation: shake 0.5s ease-in-out infinite;
+}
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-4px);
-      }
-      60% {
-        transform: translateY(-1px);
-      }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .bounded-shake {
-    animation: bounce 0.5s ease-in-out infinite;
+  40% {
+    transform: translateX(3px);
   }
-  
+  60% {
+    transform: translateY(-1px);
+  }
+}
+
+.bounded-shake {
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bouncing {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-60px);
+  }
+  60% {
+    transform: translateX(45px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+}
+
+
+.shake-bounce {
+  animation: bouncing 1.2s infinite 5s;
+}
+
 /* ==== Loading Spinner ====  */
 .spinloader {
   color: #000;
@@ -115,7 +146,7 @@
   height: 5px;
   background: currentColor;
   position: absolute;
-  top: 16px;
+  top: 23px;
   right: -9px;
   box-sizing: border-box;
   animation: animspinloader 1s linear infinite;
@@ -132,4 +163,3 @@
     box-shadow: 10px 0 black, 20px 0 black;
   }
 }
-  

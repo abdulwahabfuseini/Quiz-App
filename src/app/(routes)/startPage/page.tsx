@@ -1,31 +1,38 @@
 "use client";
 
-
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Typewriter } from "react-simple-typewriter";
 
 const StartPage = () => {
   const router = useRouter();
+
   return (
     <div className="">
-      <div className="w-full max-w-2xl mx-auto py-10 h-screen sm:h-full md:h-screen grid place-content-center place-items-center">
+      <div className="w-full max-w-2xl mx-auto py-10 h-screen sm:h-full md:h-screen gap-y-7 grid place-content-center place-items-center">
         <Image
-          src="/SVG/brain.gif"
-          width={250}
+          src="/SVG/start.png"
+          width={300}
           height={200}
           alt="quiz"
-          className=" object-contain"
+          className="object-contain shake-bounce"
         />
-        <div className="py-8 text-white">
-          <h1 className="text-2xl font-semibold spinloader">
-            {" "}
-            Quiz Time
-          </h1>
-        </div>
+
+        <h4 className="text-3xl Text">
+          <Typewriter
+            words={["Quiz Time ..."]}
+            loop={Infinity}
+            cursor
+            cursorStyle="_"
+            typeSpeed={80}
+            deleteSpeed={90}
+            delaySpeed={800}
+          />
+        </h4>
         <button
           type="button"
           onClick={() => router.push("/account")}
-          className="bg-red-700 text-lg font-semibold px-4 py-3 rounded-lg text-white hover:bg-green-700 transition-all ease-in-out"
+          className="aqua-background text-lg font-semibold px-4 py-2 rounded-lg text-white hover:bg-green-800 transition-all ease-in-out"
         >
           Get Started
         </button>

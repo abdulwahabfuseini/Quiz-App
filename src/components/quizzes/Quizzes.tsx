@@ -10,7 +10,7 @@ const Quizzes = ({ currentQuestion }: QuizCategory) => {
     <div>
       <h1 className="text-lg py-2">{currentQuestion.question}</h1>
       <div className="grid sm:grid-cols-2 w-full my-2 mb-6 gap-x-2 gap-y-3">
-        {currentQuestion.incorrectAnswers.map((answer: string, index: number) => (
+        {quizState.answers.map((answer: string, index: number) => (
           <QuizAnswers
             key={index}
             answerText={answer}

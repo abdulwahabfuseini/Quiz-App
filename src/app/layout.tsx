@@ -3,8 +3,7 @@ import "./globals.css";
 
 import AuthProvider from "@/contexts/AuthProvider";
 import QuizProvider from "@/contexts/QuizProvider";
-
-
+import ToastContext from "@/contexts/ToastContext";
 
 export const metadata: Metadata = {
   title: "Quiz App",
@@ -20,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-slate-100 w-full">
         <AuthProvider>
+          <ToastContext />
           <QuizProvider>{children}</QuizProvider>
         </AuthProvider>
       </body>
