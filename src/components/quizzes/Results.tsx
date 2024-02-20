@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 const Results = () => {
-  const [quizState, dispatch] = useContext(QuizContext);
+  const [quizState] = useContext(QuizContext);
   const { data: session } = useSession();
   const router = useRouter();
 
