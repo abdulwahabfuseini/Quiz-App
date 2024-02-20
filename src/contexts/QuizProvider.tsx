@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { createContext, useReducer, Reducer, ReactNode } from "react";
 import { QuizData } from "@/assets/QuizData";
@@ -44,7 +44,7 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
 
       const answers = showResults
         ? []
-        : shuffleAnswers(state.QuizDat[0].questions[currentQuestionIndex]);
+        : shuffleAnswers(state.QuizData[0].questions[currentQuestionIndex]);
 
       return {
         ...state,

@@ -19,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-slate-100 w-full">
         <AuthProvider>
-          <ToastContext />
-          <QuizProvider>{children}</QuizProvider>
+          <QuizProvider>
+            <ToastContext />
+            {children}
+          </QuizProvider>
         </AuthProvider>
       </body>
     </html>

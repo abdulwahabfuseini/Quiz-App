@@ -37,13 +37,15 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
     }
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1800);
   }, [id, dispatch, router, quizState.QuizData]);
 
   if (!id || !selectedCategoryRef.current) {
     return (
       <div className="grid h-screen place-content-center place-items-center">
-        <h1 className="spinloader text-2xl">Loading</h1>
+          {
+            loading &&  <h1 className="spinloader text-2xl">Loading</h1>
+          }
       </div>
     );
   }
