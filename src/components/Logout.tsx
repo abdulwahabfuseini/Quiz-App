@@ -7,9 +7,9 @@ const Logout = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // if (session?.status === "unauthenticated") {
-    //   router.push("/");
-    // }
+    if (session?.status === "unauthenticated") {
+      router.push("/");
+    }
   });
 
   return (

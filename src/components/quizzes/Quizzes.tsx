@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useContext } from "react";
 import { QuizContext } from "@/contexts/QuizProvider";
 import QuizAnswers from "../quizzes/QuizAnswers";
