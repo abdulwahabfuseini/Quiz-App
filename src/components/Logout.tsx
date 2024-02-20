@@ -7,17 +7,17 @@ const Logout = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (session?.status === "unauthenticated") {
-      router.push("/");
-    }
+    // if (session?.status === "unauthenticated") {
+    //   router.push("/");
+    // }
   });
 
   return (
     <button
       onClick={() => signOut()}
-      className="text-lg aqua-background text-white font-bold py-2 px-2 sm:px-3 rounded-lg"
+      className="text-lg aqua-background text-white font-bold py-1.5 px-2 sm:px-3 rounded-lg"
     >
-      SignOut
+      Log Out
     </button>
   );
 };

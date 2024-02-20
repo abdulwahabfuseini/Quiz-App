@@ -14,9 +14,9 @@ const Results = () => {
 
   return (
     <div className="grid place-content-center py-6 place-items-center text-center gap-4">
-      <h1 className="text-2xl font-semibold">
+      <h1 className="text-xl font-semibold">
         Congratutions, {" "}
-        <span className="text-lg font-semibold">{session?.user?.name}</span>
+        <span className="text-base font-semibold">{session?.user?.name}</span>
       </h1>
       <Image
         src="/SVG/cup.gif"

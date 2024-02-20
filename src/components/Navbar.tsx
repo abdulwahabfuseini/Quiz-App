@@ -18,7 +18,7 @@ const Navbar = () => {
             alt="profile"
             className="rounded-full object-contain"
           />
-          <h1 className=" font-bold text-lg sm:text-xl Text truncate">{session?.user?.name}</h1>
+          <h1 className=" font-bold  sm:text-xl Text truncate">{session?.user?.name}</h1>
         </div>
         <Logout />
       </div>

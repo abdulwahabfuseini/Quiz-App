@@ -38,24 +38,24 @@ const Back = () => {
       {showConfirmation && (
         <div className="rounded-lg bg-white p-4 shadow-2xl absolute -top-2 left-0 right-0 z-50">
           <h1 className="text-lg pb-2 font-bold">{session?.user?.name}</h1>
-          <h2 className="text-lg sm:text-xl text-center font-bold flex items-cente gap-1 text-red-600">
+          <span className="text-lg sm:text-xl text-center font-bold flex items-cente gap-1 text-red-600">
           <PiSealWarningFill  className="w-8 h-7 font-extrabold" />
             Are you sure you want to quit quiz
-          </h2>
+          </span>
 
           <div className="mt-4 flex gap-2">
             <button
               type="button"
               onClick={handleConfirm}
-              className="rounded bg-green-200 p-2 text-lg font-medium text-green-700"
+              className="rounded bg-green-200 p-1.5 text-lg font-medium text-green-700"
             >
-              Yes Quit
+              Yes, Quit
             </button>
 
             <button
               type="button"
               onClick={handleCancel}
-              className="rounded bg-red-200 p-2 text-lg font-medium text-red-600"
+              className="rounded bg-red-200 p-1.5 text-lg font-medium text-red-600"
             >
               No, Continue
             </button>

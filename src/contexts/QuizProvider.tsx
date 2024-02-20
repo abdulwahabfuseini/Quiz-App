@@ -6,6 +6,7 @@ import { shuffleAnswers } from "@/components/Helper";
 import { QuizCategory } from "./Types";
 
 interface QuizState {
+  [x: string]: any;
   QuizData: QuizCategory[];
   currentQuestionIndex: number;
   showResults: boolean;
@@ -43,7 +44,7 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
 
       const answers = showResults
         ? []
-        : shuffleAnswers(state.QuizData[0].questions[currentQuestionIndex]);
+        : shuffleAnswers(state.QuizDat[0].questions[currentQuestionIndex]);
 
       return {
         ...state,
@@ -60,8 +61,6 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
         state.QuizData[0].questions[state.currentQuestionIndex].correctAnswer
         ? state.correctAnswersCount + 1
         : state.correctAnswersCount;
-
-        console.log("Correct Answers Count:", correctAnswersCount);
 
       return {
         ...state,

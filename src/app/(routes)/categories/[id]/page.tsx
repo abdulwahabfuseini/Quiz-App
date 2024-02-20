@@ -69,7 +69,7 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
         <div>{quizState.showResults && <Results />}</div>
         <div>
           {!quizState.showResults && (
-            <div className="max-w-4xl mx-auto sm:p-5 md:mt-20 lg:mt-10 rounded-lg">
+            <div className="max-w-4xl mx-auto sm:p-5 md:mt-20 lg:mt-6 rounded-lg">
              <Back />
               <div className="flex items-center">
               <h1 className=" capitalize text-2xl font-semibold text-green-600">
