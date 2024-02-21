@@ -4,6 +4,7 @@ import "./globals.css";
 import AuthProvider from "@/contexts/AuthProvider";
 import QuizProvider from "@/contexts/QuizProvider";
 import ToastContext from "@/contexts/ToastContext";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Quiz App",
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-slate-100 w-full">
-        <AuthProvider>
-          <QuizProvider>
-            <ToastContext />
-            {children}
-          </QuizProvider>
-        </AuthProvider>
+        <Loading>
+          <AuthProvider>
+            <QuizProvider>
+              <ToastContext />
+              {children}
+            </QuizProvider>
+          </AuthProvider>
+        </Loading>
       </body>
     </html>
   );

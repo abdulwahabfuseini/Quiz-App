@@ -17,10 +17,11 @@ const Quizzes: React.FC<QuizCategory> = ({ currentQuestion }) => {
       <div className="grid sm:grid-cols-2 w-full my-2 mb-6 gap-x-2 gap-y-3">
         {quizState.answers.map((answer: string, index: number) => (
           <QuizAnswers
-            key={answer}
+            key={index}
             answerText={answer}
             index={index}
             currentAnswer={quizState.currentAnswer}
+         
             correctAnswer={currentQuestion.correctAnswer}
             onSelectAnswer={(answerText: string) =>
               dispatch({ type: "SELECT_ANSWER", payload: answerText })

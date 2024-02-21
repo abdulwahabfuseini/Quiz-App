@@ -1,4 +1,5 @@
 export const QuizData = [
+  
   {
     category: "Programming",
     questions: [
@@ -168,6 +169,7 @@ export const QuizData = [
         correctAnswer: "Refers to the current object or context",
       },
     ],
+    
   },
   {
     category: "Sports",

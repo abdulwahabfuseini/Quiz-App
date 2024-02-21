@@ -43,9 +43,7 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
   if (!id || !selectedCategoryRef.current) {
     return (
       <div className="grid h-screen place-content-center place-items-center">
-          {
-            loading &&  <h1 className="spinloader text-2xl">Loading</h1>
-          }
+        <h1 className="spinloader text-2xl">Loading</h1>
       </div>
     );
   }
@@ -64,26 +62,28 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
             alt="profile"
             className="rounded-full object-contain"
           />
-          <h1 className=" font-bold text-lg sm:text-xl Text">{session?.user?.name}</h1>
+          <h1 className=" font-bold text-lg sm:text-xl Text">
+            {session?.user?.name}
+          </h1>
         </div>
       </div>
-      <div className="py-10 max-w-5xl mx-auto px-3">
+      <div className="py-6 sm:py-10 max-w-5xl mx-auto px-3">
         <div>{quizState.showResults && <Results />}</div>
         <div>
           {!quizState.showResults && (
             <div className="max-w-4xl mx-auto sm:p-5 md:mt-20 lg:mt-6 rounded-lg">
-             <Back />
+              <Back />
               <div className="flex items-center">
-              <h1 className=" capitalize text-2xl font-semibold text-green-600">
-                {id}
-              </h1>
-              <Image
-                src="/SVG/quiztime.png"
-                width={110}
-                height={110}
-                alt="logo"
-                className=" object-contain bounded-shake"
-              />
+                <h1 className=" capitalize text-2xl font-semibold text-green-600">
+                  {id}
+                </h1>
+                <Image
+                  src="/SVG/quiztime.png"
+                  width={110}
+                  height={110}
+                  alt="logo"
+                  className=" object-contain bounded-shake"
+                />
               </div>
               <div>
                 <div className="py-2 font-bold text-red-600 text-lg">
