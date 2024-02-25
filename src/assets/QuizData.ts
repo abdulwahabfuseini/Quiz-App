@@ -1,16 +1,15 @@
 export const QuizData = [
-  
   {
     category: "Programming",
     questions: [
       {
-        question: "What does CSS stand for in web development?",
+        question: "What is the purpose of the 'await' keyword in JavaScript?",
         incorrectAnswers: [
-          "Computer Style Sheets",
-          "Cascading Script Style",
-          "Client-Side Styling",
+          "To define a variable",
+          "To handle errors",
+          "To stop the execution of a loop",
         ],
-        correctAnswer: "Cascading Style Sheets",
+        correctAnswer: "To create asynchronous functions",
       },
       {
         question:
@@ -29,9 +28,13 @@ export const QuizData = [
       },
       {
         question:
-          "In JavaScript, what is the purpose of the 'typeof' operator?",
-        incorrectAnswers: ["Java", "C++", "Ruby"],
-        correctAnswer: "JavaScript",
+          "Where in an HTML document is the correct place to refer to an external style sheet?",
+        incorrectAnswers: [
+          "In the <body> section",
+          "At the end of the document",
+          "You can't refer to an external style sheet",
+        ],
+        correctAnswer: "In the <head> section",
       },
       {
         question:
@@ -67,7 +70,15 @@ export const QuizData = [
         ],
         correctAnswer: "To create anonymous functions",
       },
-     
+      {
+        question: "What does CSS stand for in web development?",
+        incorrectAnswers: [
+          "Computer Style Sheets",
+          "Cascading Script Style",
+          "Client-Side Styling",
+        ],
+        correctAnswer: "Cascading Style Sheets",
+      },
       {
         question:
           "Which programming paradigm is characterized by the use of functions as first-class citizens?",
@@ -82,15 +93,6 @@ export const QuizData = [
           "Model-View-Configuration",
         ],
         correctAnswer: "Model-View-Controller",
-      },
-      {
-        question: "What is the purpose of the 'await' keyword in JavaScript?",
-        incorrectAnswers: [
-          "To define a variable",
-          "To handle errors",
-          "To stop the execution of a loop",
-        ],
-        correctAnswer: "To create asynchronous functions",
       },
       {
         question:
@@ -169,7 +171,6 @@ export const QuizData = [
         correctAnswer: "Refers to the current object or context",
       },
     ],
-    
   },
   {
     category: "Sports",
@@ -182,7 +183,7 @@ export const QuizData = [
       {
         question: "In which sport would you perform a slam dunk?",
         incorrectAnswers: ["Tennis", "Soccer", "Golf"],
-        correctAnswer: "BasketBall",
+        correctAnswer: "Basketball",
       },
       {
         question: "Which city hosted the 2016 Summer Olympics",
@@ -453,7 +454,7 @@ export const QuizData = [
       },
       {
         question: "Which African country is known as the 'Pearl of Africa'?",
-        incorrectAnswers: [ "Nigeria", "South Africa", "Egypt"],
+        incorrectAnswers: ["Nigeria", "South Africa", "Egypt"],
         correctAnswer: "Uganda",
       },
       {
@@ -553,7 +554,7 @@ export const QuizData = [
       },
       {
         question: "Which mammal is capable of flight?",
-        incorrectAnswers: ["Bat", "Squirrel", "Giraffe"],
+        incorrectAnswers: ["Eagle", "Squirrel", "Giraffe"],
         correctAnswer: "Bat",
       },
       {

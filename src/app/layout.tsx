@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import AuthProvider from "@/contexts/AuthProvider";
-import QuizProvider from "@/contexts/QuizProvider";
+
 import ToastContext from "@/contexts/ToastContext";
 import Loading from "./loading";
+import  QuizProvider  from "@/contexts/QuizProvider";
 
 export const metadata: Metadata = {
   title: "Quiz App",

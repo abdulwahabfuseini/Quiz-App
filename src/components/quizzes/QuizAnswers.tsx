@@ -15,6 +15,7 @@ const QuizAnswers: React.FC<ProAnswersProps> = ({
   currentAnswer,
   correctAnswer,
 }) => {
+  
   const letterMapping = ["A:", "B:", "C:", "D:"];
   const isCorrectAnswer = currentAnswer && answerText === correctAnswer;
   const isWrongAnswer =

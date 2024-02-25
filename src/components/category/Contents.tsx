@@ -62,7 +62,7 @@ const Contents = () => {
         </div>
         <p className="py-2 text-xl">Choose a category to start playing</p>
       </div>
-      <div className="py-8 grid sm:grid-auto-fit-xl w-full gap-x-2 gap-y-9">
+      <div className="py-8 grid sm:grid-auto-fit w-full gap-x-2 gap-y-9">
         {categoryData.map((category) => (
           <CategoryCard
             key={category.id}

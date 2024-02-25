@@ -1,12 +1,13 @@
-"use client"
+// QuizProvider.tsx
+
+"use client";
 
 import React, { createContext, useReducer, Reducer, ReactNode } from "react";
 import { QuizData } from "@/assets/QuizData";
-import { shuffleAnswers } from "@/components/Helper";
+import { shuffleAnswersForCategory, shuffleAnswersForQuiz } from "@/components/Helper";
 import { QuizCategory } from "./Types";
 
 interface QuizState {
-  [x: string]: any;
   QuizData: QuizCategory[];
   currentQuestionIndex: number;
   showResults: boolean;
@@ -21,16 +22,15 @@ type QuizAction =
   | { type: "SELECT_ANSWER"; payload: string }
   | { type: "RESTART" };
 
-  const initialState: QuizState = {
-    QuizData: QuizData as QuizCategory[],
-    currentQuestionIndex: 0,
-    showResults: false,
-    correctAnswersCount: 0,
-    answers: shuffleAnswers(QuizData[0].questions[0]),
-    currentAnswer: "",
-    isAnswerSelected: false,
-  };
-  
+const initialState: QuizState = {
+  QuizData: QuizData.map(shuffleAnswersForCategory),
+  currentQuestionIndex: 0,
+  showResults: false,
+  correctAnswersCount: 0,
+  answers: [],
+  currentAnswer: "",
+  isAnswerSelected: false,
+};
 
 const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
   switch (action.type) {
@@ -42,9 +42,23 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
         ? state.currentQuestionIndex
         : state.currentQuestionIndex + 1;
 
-      const answers = showResults
-        ? []
-        : shuffleAnswers(state.QuizData[0].questions[currentQuestionIndex]);
+        const shuffledQuiz = shuffleAnswersForQuiz();
+        console.log("shuffledQuiz:", shuffledQuiz);
+      
+        const category = shuffledQuiz[currentQuestionIndex];
+        console.log("category:", category);
+      
+        // Check if category and category.questions exist
+        const questions = category ? category.questions : [];
+        console.log("questions:", questions);
+      
+        // Check if questions[0] and questions[0].shuffledAnswers exist
+        const answers = showResults
+          ? []
+          : questions[0] && questions[0].shuffledAnswers
+          ? questions[0].shuffledAnswers
+          : [];
+      
 
       return {
         ...state,
@@ -55,12 +69,13 @@ const reducer: Reducer<QuizState, QuizAction> = (state, action) => {
         isAnswerSelected: false,
       };
     }
+
     case "SELECT_ANSWER": {
       const correctAnswersCount =
         action.payload ===
         state.QuizData[0].questions[state.currentQuestionIndex].correctAnswer
-        ? state.correctAnswersCount + 1
-        : state.correctAnswersCount;
+          ? state.correctAnswersCount + 1
+          : state.correctAnswersCount;
 
       return {
         ...state,
@@ -87,7 +102,7 @@ interface QuizProviderProps {
 
 const QuizProvider: React.FC<QuizProviderProps> = ({ children }) => {
   const value = useReducer(reducer, initialState);
-  
+
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>;
 };
 
