@@ -7,6 +7,13 @@ export type CategoryProps = {
   bg: string;
 };
 
+export interface ProAnswersProps {
+  answerText: string;
+  index: number;
+  onSelectAnswer: (answer: string) => void;
+  currentAnswer: string;
+  correctAnswer: string;
+}
 
 export interface QuizCategory {
   [x: string]: any;

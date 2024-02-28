@@ -26,7 +26,6 @@ const GetStarted = () => {
             cursorStyle="|"
             typeSpeed={80}
             deleteSpeed={90}
-            // delaySpeed={800}
           />
         </h4>
         <button

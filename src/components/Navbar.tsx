@@ -11,12 +11,12 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-        return window.scrollY > 50 ? setSticky(true) : setSticky(false)
+        return window.scrollY > 40 ? setSticky(true) : setSticky(false)
     })
   })
 
   return (
-    <div className={`${sticky ? "fixed top-0 left-0 w-full bg-white shadow z-50": ""} px-3 sm:px-5 py-4`}>
+    <div className={`${sticky ? "fixed top-0 left-0 w-full bg-white shadow z-50": ""} px-3 sm:px-8 py-4`}>
       <div className="max-w-7xl mx-auto  flex items-center justify-between ">
         <div className="flex items-center gap-2">
           <Image

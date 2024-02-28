@@ -51,7 +51,6 @@ const Quiz: React.FC<{ params: { id: string } }> = ({ params }) => {
   const currentQuestion =
     selectedCategoryRef.current.questions[quizState.currentQuestionIndex];
 
-
   return (
     <>
       <div className=" ">

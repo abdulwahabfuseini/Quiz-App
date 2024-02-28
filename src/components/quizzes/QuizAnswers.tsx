@@ -1,12 +1,7 @@
+import { ProAnswersProps } from "@/contexts/Types";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-interface ProAnswersProps {
-  answerText: string;
-  index: number;
-  onSelectAnswer: (answer: string) => void;
-  currentAnswer: string;
-  correctAnswer: string;
-}
+
 
 const QuizAnswers: React.FC<ProAnswersProps> = ({
   answerText,

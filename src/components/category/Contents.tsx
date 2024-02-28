@@ -48,7 +48,7 @@ const categoryData = [
 
 const Contents = () => {
   return (
-    <div className="max-w-5xl mx-auto px-3 sm:px-5 py-20">
+    <div className="max-w-5xl mx-auto px-3 sm:px-5 py-24 sm:py-32 lg:py-24">
       <div className="">
         <div className="relative w-full">
           <h1 className="text-4xl font-bold relative">Let&apos;s Play</h1>
@@ -57,12 +57,12 @@ const Contents = () => {
             width={100}
             height={100}
             alt="logo"
-            className=" object-contain -top-14 left-5 absolute shake-button"
+            className=" object-contain -top-14 left-5 absolute shake-bounce "
           />
         </div>
         <p className="py-2 text-xl">Choose a category to start playing</p>
       </div>
-      <div className="py-8 grid sm:grid-auto-fit w-full gap-x-2 gap-y-9">
+      <div className="py-8 grid grid-auto-fit w-full gap-x-2 gap-y-9">
         {categoryData.map((category) => (
           <CategoryCard
             key={category.id}

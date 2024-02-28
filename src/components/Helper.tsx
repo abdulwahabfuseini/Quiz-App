@@ -1,5 +1,3 @@
-// helper.ts
-
 import { QuizData } from "@/assets/QuizData";
 
 export const shuffleArray = (array: string[]): string[] => {
@@ -17,7 +15,6 @@ export const shuffleAnswersForQuestion = (question: any): any => {
   const allAnswers = [correctAnswer, ...incorrectAnswers];
   const shuffledAnswers = shuffleArray(allAnswers);
   return { ...question, shuffledAnswers: shuffledAnswers };
-  // Return the question object with shuffledAnswers excluding the first element (correct answer)
 };
 
 // Function to shuffle answers for all questions in a category

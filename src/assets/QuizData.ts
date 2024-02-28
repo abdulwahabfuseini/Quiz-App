@@ -554,7 +554,7 @@ export const QuizData = [
       },
       {
         question: "Which mammal is capable of flight?",
-        incorrectAnswers: ["Eagle", "Squirrel", "Giraffe"],
+        incorrectAnswers: ["Mouse", "Squirrel", "Giraffe"],
         correctAnswer: "Bat",
       },
       {

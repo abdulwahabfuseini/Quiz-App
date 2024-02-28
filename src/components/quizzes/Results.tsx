@@ -12,6 +12,7 @@ const Results = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
+  
   return (
     <div className="grid place-content-center py-6 place-items-center text-center gap-4">
       <h1 className="text-xl font-semibold">
@@ -41,7 +42,6 @@ const Results = () => {
           questions right
         </p>
       </div>
-
       <Button
         type="primary"
         htmlType="button"
