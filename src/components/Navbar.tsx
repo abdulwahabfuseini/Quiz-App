@@ -23,6 +23,7 @@ const Navbar = () => {
             src={session?.user?.image || ""}
             width={40}
             height={40}
+            loading="eager"
             alt="profile"
             className="rounded-full object-contain"
           />

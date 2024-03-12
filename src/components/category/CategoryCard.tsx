@@ -14,6 +14,7 @@ const CategoryCard = ({ title, image, path, bg }: CategoryProps) => {
               src="/SVG/play.gif"
               width={40}
               height={40}
+              loading="eager"
               alt="play"
               className="object-contain"
             />
@@ -24,6 +25,7 @@ const CategoryCard = ({ title, image, path, bg }: CategoryProps) => {
             src={`/SVG/${image}`}
             width={120}
             height={120}
+            loading="eager"
             alt="quiz"
             className="object-contain absolute -top-8 right-2"
           />

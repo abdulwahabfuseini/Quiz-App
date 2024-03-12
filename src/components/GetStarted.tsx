@@ -9,7 +9,7 @@ const GetStarted = () => {
 
   return (
     <div className="">
-      <div className="w-full max-w-2xl mx-auto py-10 h-screen sm:h-full md:h-screen gap-y-7 grid place-content-center place-items-center">
+      <div className="w-full max-w-2xl m-auto  h-screen sm:h-full md:h-screen gap-y-7 grid place-content-center place-items-center">
         <Image
           src="/SVG/start.png"
           width={300}
